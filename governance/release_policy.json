@@ -1,0 +1,18 @@
+{
+  "policy_version": "2026.11",
+  "scope": "customer_attrition_v3",
+  "metric": "val_auc",
+  "evaluation_window_steps": 50,
+  "final_val_auc_definition": "arithmetic mean of val_auc over the final evaluation_window_steps logged steps",
+  "auc_std_definition": "population standard deviation (ddof=0) of val_auc over the final evaluation_window_steps logged steps",
+  "minimum_final_val_auc": 0.78,
+  "maximum_auc_std_last_50_steps": 0.006,
+  "minimum_improvement_over_champion": 0.015,
+  "criterion_ids": [
+    "final_val_auc",
+    "auc_stability",
+    "improvement"
+  ],
+  "decision_if_all_criteria_met": "PROMOTE",
+  "decision_otherwise": "HOLD"
+}
